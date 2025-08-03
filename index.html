@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>allyskiee space</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Century Gothic', sans-serif;
+      background: url('black.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 1300px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    }
+
+    .left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 30px;
+      border: 4px solid #ffffffbb;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+
+    .right {
+      flex: 2;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 55px;
+      color: white;
+      text-shadow: 2px 2px 10px #ffffff, 0 0 5px #00ffff;
+      margin-bottom: 20px;
+    }
+
+    .right p {
+      font-size: 20px;
+      font-family: 'Century Gothic', sans-serif;
+      line-height: 1.8;
+      background: linear-gradient(to right, #ffffff, #e0e0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 400;
+      white-space: pre-line;
+      margin-bottom: 25px;
+    }
+
+    .quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid #00ffff;
+      padding: 15px 20px;
+      margin: 30px 0;
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 20px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      background-color: transparent;
+      color: white;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ffffff88;
+    }
+
+    nav a:hover {
+      background-color: #ffffff;
+      color: #000;
+      box-shadow: 0 0 15px #00ffffaa;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden Autoplay Music -->
+  <audio id="bg-music" loop muted>
+    <source src="ocean eyes.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <div class="left">
+      <img src="me (2).jpg" alt="My Photo" />
+    </div>
+    <div class="right">
+<p>
+</p>
+<p> 
+      <h1>Hi, I'm allyskiee</h1>
+
+</p>
+      <p>
+I believe in turning ordinary moments into meaningful ones. 🌷✨
+
+This space is more than just a site — it’s a reflection of my passions, creativity, and personal journey.
+
+Here, you’ll discover pieces of my world: what I love, what inspires me, and how I connect with the people around me.
+      </p>
+
+      <div class="quote">
+        "Create a life that feels good on the inside, not one that just looks good on the outside."
+      </div>
+
+      <p>
+Whether you're here to explore, reflect, or simply relax — I hope this space brings warmth, light, and a touch of magic to your day.
+
+Let’s make life more creative, vibrant, and authentically ours.
+
+Thanks for stopping by. 🌼 Feel free to look around, reach out, or just enjoy the vibe.
+      </p>
+Click my photo to see the magic. 
+</p>
+      <nav>
+        <a href="about.html">About Me</a>
+        <a href="blog.html">My Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    window.addEventListener('click', () => {
+      audio.muted = false;
+      audio.play().catch((e) => {
+        console.log("Autoplay blocked:", e);
+      });
+    });
+  </script>
+</body>
+</html>

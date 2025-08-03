@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentimental Gallery</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: url('black city.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      font-family: 'Century Gothic', sans-serif;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: -1;
+    }
+
+    .gallery-container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 48px;
+      margin-bottom: 40px;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 1px 1px 6px #000;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .post {
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .post:hover {
+      transform: scale(1.03);
+    }
+
+    .post img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      padding: 20px;
+      color: black;
+      font-size: 15px;
+      font-family: 'Century Gothic', sans-serif;
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    .caption strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 10px 20px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #00000077;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: black;
+      color: white;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="gallery-container">
+    <h1>Sentimental Gallery</h1>
+
+    <div class="grid">
+      <div class="post">
+        <img src="4.jpg" alt="Photo 1" />
+        <div class="caption">
+          <strong>Joyful Days 🌞</strong>
+          I love being surrounded by the people who make me laugh and feel alive.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="four.jpg" alt="Photo 2" />
+        <div class="caption">
+          <strong>Fun Moments</strong>
+          Whether it’s family or friends, memories with them are priceless. 
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="pic.jpg" alt="Photo 3" />
+        <div class="caption">
+          <strong>Memories Last</strong>
+          I'm a jolly person who always finds ways to enjoy every moment.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="pic2.jpg" alt="Photo 4" />
+        <div class="caption">
+          <strong>Smile Always</strong>
+          Laughter is my daily therapy. Smiling is natural for me.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="smile.jpg" alt="Photo 5" />
+        <div class="caption">
+          <strong>Simple Joys</strong>
+          Happiness shines through when I’m with my favorite people.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="smile2.jpg" alt="Photo 6" />
+        <div class="caption">
+          <strong>Always Cheerful 😊</strong>
+          I carry my joy with me wherever I go.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="happy.jpg" alt="Photo 7" />
+        <div class="caption">
+          <strong>My Happy Place</strong>
+          I find happiness in little things — especially when I’m not alone.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="jog.jpg" alt="Photo 8" />
+        <div class="caption">
+          <strong>Running Free</strong>
+          Movement clears the mind, especially with good company.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="graduate.jpg" alt="Photo 9" />
+        <div class="caption">
+          <strong>Proud Milestones 🎓</strong>
+          Achievements are even sweeter when shared with loved ones.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="blog.jpg" alt="Photo 10" />
+        <div class="caption">
+          <strong>Blog Moments</strong>
+          Capturing moments is a way of capturing my joy.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="sunset.jpg" alt="Photo 11" />
+        <div class="caption">
+          <strong>Golden Hour</strong>
+          The sunset reflects how vibrant and warm life feels with others.
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="me2.jpg" alt="Photo 12" />
+        <div class="caption">
+          <strong>Just Me</strong>
+          A girl with a bright smile, big dreams, and a jolly heart. 💖
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Hidden Autoplay Music -->
+  <audio id="bg-music" loop muted>
+    <source src="ocean eyes.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    window.addEventListener('click', () => {
+      audio.muted = false;
+      audio.play().catch((e) => {
+        console.log("Autoplay blocked:", e);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Century Gothic', sans-serif;
+      background: url('black.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      color: white;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: -1;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      font-family: 'Victor Mono', cursive;
+      margin-bottom: 40px;
+      color: white;
+      text-shadow: 1px 1px 6px #000;
+    }
+
+    .card {
+      background-color: white;
+      color: black;
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid black;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info strong {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: white;
+      color: black;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid black;
+      box-shadow: 0 0 10px #00000077;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="contact-container">
+    <h1>Contact Info's</h1>
+
+    <div class="card">
+      <img src="portrait2.jpg" alt="Portrait Icon" />
+      <div class="info">
+        <strong>Phone Number</strong>
+        <span>0919-696-3211</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="portrait.jpg" alt="Facebook Icon" />
+      <div class="info">
+        <strong>My Facebook</strong>
+        <a href="https://www.facebook.com/allyssa.locloc.3/" target="_blank">facebook.com/allyssa.locloc.3</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="UC.jpg" alt="UC Icon" />
+      <div class="info">
+        <strong>UC Official Page</strong>
+        <a href="https://www.facebook.com/UCjaguars" target="_blank">facebook.com/UCjaguars</a>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+</body>
+</html>
