@@ -13,6 +13,7 @@
       background-size: cover;
       color: black;
       padding: 40px 20px;
+      overflow-x: hidden;
     }
 
     h1, .section-title {
@@ -26,10 +27,11 @@
       box-shadow: 0 0 10px #00000030;
       margin: 0 auto 40px;
       border: 2px dashed #999;
+      animation: fadeSlideIn 1.5s ease-in-out;
     }
 
     .section {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 25px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       padding: 30px;
@@ -40,6 +42,13 @@
       gap: 30px;
       flex-wrap: wrap;
       border: 2px dotted #aaa;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    .section:nth-of-type(odd) {
+      flex-direction: row;
     }
 
     .section img {
@@ -47,9 +56,16 @@
       height: 240px;
       border-radius: 10px;
       object-fit: cover;
-      box-shadow: 10px 10px 0 #fff, 10px 10px 0 3px #00000050;
       border: 5px solid white;
+      box-shadow: 10px 10px 0 #fff, 10px 10px 0 3px #00000050;
       transform: rotate(2deg);
+      animation: floatImage 4s ease-in-out infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .section img:hover {
+      transform: scale(1.05) rotate(0deg);
+      box-shadow: 0 0 20px #ffd700aa;
     }
 
     .section .text {
@@ -82,11 +98,36 @@
       transform: scale(1.05);
     }
 
+    @keyframes floatImage {
+      0% { transform: translateY(0px) rotate(2deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+      100% { transform: translateY(0px) rotate(2deg); }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
     @media (max-width: 768px) {
       .section {
         flex-direction: column;
         text-align: center;
       }
+
       .section img {
         margin-top: 20px;
       }
@@ -105,13 +146,12 @@
     Your browser does not support the audio element.
   </audio>
 
-  <h1>About Me </h1>
+  <h1>About Me</h1>
 
   <div class="section">
     <div class="text">
-      <p>Hi! <strong>I’m Allyssa Mae Alumno Locloc </strong>, but you can simply call me <strong>Ally</strong>.I’m a proud Criminology student from the University of the Cordilleras, following a path that balances both heart and purpose. While my field may deal with laws, justice, and the protection of others, my soul is quietly nurtured by life’s softer joys — like the aroma of baked goods, the comfort of rest, and the magic of shared meals.</p>
-      <p>In a world that often moves too fast, I find peace in slowing down.
-I believe beauty is found in life’s little things — the smell of banana cake in the oven, a quiet morning with coffee, the rhythm of rain on the window, and the comfort of being surrounded by people who matter. Through this simple space online, I want to invite you into a small part of my life — the part where peace lives, love lingers, and memories are gently made.</p>
+      <p>Hi! <strong>I’m Allyssa Mae Alumno Locloc</strong>, but you can simply call me <strong>Ally</strong>. I’m a proud Criminology student from the University of the Cordilleras, following a path that balances both heart and purpose. While my field may deal with laws, justice, and the protection of others, my soul is quietly nurtured by life’s softer joys — like the aroma of baked goods, the comfort of rest, and the magic of shared meals.</p>
+      <p>In a world that often moves too fast, I find peace in slowing down. I believe beauty is found in life’s little things — the smell of banana cake in the oven, a quiet morning with coffee, the rhythm of rain on the window, and the comfort of being surrounded by people who matter.</p>
     </div>
     <img src="eating.jpg" alt="Eating" />
   </div>
@@ -134,16 +174,14 @@ I believe beauty is found in life’s little things — the smell of banana cake
 
   <div class="section">
     <div class="text">
-      <p>Food is more than fuel — it’s a language of love.
-It’s how I care for others, how I express gratitude, how I celebrate, and even how I cope. Cooking for someone or sharing a meal is my way of saying, “You matter.” I believe food connects us in ways words sometimes can’t.</p>
+      <p>Food is more than fuel — it’s a language of love. It’s how I care for others, how I express gratitude, how I celebrate, and even how I cope. Cooking for someone or sharing a meal is my way of saying, “You matter.” I believe food connects us in ways words sometimes can’t.</p>
     </div>
     <img src="food.jpg" alt="Food" />
   </div>
 
   <div class="section">
     <div class="text">
-      <p>Sushi, to me, is calm on a plate.
-Every roll feels thoughtful — neat, peaceful, balanced. Eating sushi makes me feel grounded, like everything in life can have a sense of order and beauty. It’s my way of treating myself, a small celebration that feels both elegant and peaceful.</p>
+      <p>Sushi, to me, is calm on a plate. Every roll feels thoughtful — neat, peaceful, balanced. Eating sushi makes me feel grounded, like everything in life can have a sense of order and beauty. It’s my way of treating myself, a small celebration that feels both elegant and peaceful.</p>
     </div>
     <img src="sushi.jpg" alt="Sushi" />
   </div>
@@ -152,18 +190,14 @@ Every roll feels thoughtful — neat, peaceful, balanced. Eating sushi makes me 
 
   <div class="section">
     <div class="text">
-      <p>At the heart of everything I do is my family.
-They are my strength, my source of peace, and my greatest reason for pushing forward. Their love has shaped who I am — strong, grounded, and full of heart. Whether I’m succeeding or struggling, I carry their lessons and support with me wherever I go.</p>
+      <p>At the heart of everything I do is my family. They are my strength, my source of peace, and my greatest reason for pushing forward. Their love has shaped who I am — strong, grounded, and full of heart. Whether I’m succeeding or struggling, I carry their lessons and support with me wherever I go.</p>
     </div>
     <img src="family.jpg" alt="Family" />
   </div>
 
   <div class="section">
     <div class="text">
-      <p>They’re my reason, my peace, and my forever home. Every success is theirs, too. When I dream, I dream with them in mind.
-When I succeed, it’s a shared victory.
-They’re my constant, my calm, and the home I always carry inside me.
-No matter where life leads, my family will always be my anchor and my wings.</p>
+      <p>They’re my reason, my peace, and my forever home. Every success is theirs, too. When I dream, I dream with them in mind. When I succeed, it’s a shared victory. They’re my constant, my calm, and the home I always carry inside me. No matter where life leads, my family will always be my anchor and my wings.</p>
     </div>
     <img src="family2.jpg" alt="Family 2" />
   </div>
@@ -180,8 +214,25 @@ No matter where life leads, my family will always be my anchor and my wings.</p>
         console.log("Autoplay blocked:", e);
       });
     });
+
+    // Fade-in effect on scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = "0.2s";
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
   </script>
 
 </body>
 </html>
-
