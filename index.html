@@ -16,9 +16,10 @@
       background-size: cover;
       color: #fff;
       display: flex;
-      height: 100vh;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
+      overflow-y: auto; /* <-- scroll fix */
     }
 
     .container {
@@ -29,6 +30,17 @@
       width: 90%;
       max-width: 1300px;
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 2s ease-out forwards;
+      margin: 60px 0; /* gives breathing space */
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .left {
@@ -45,6 +57,14 @@
       border-radius: 30px;
       border: 4px solid #ffffffbb;
       box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+      animation: floatImage 4s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    @keyframes floatImage {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
 
     .right {
@@ -131,14 +151,8 @@
       <img src="me (2).jpg" alt="My Photo" />
     </div>
     <div class="right">
-<p>
-</p>
-<p> 
-
-  
       <h1>Hi, I'm allyskiee</h1>
 
-</p>
       <p>
 I believe in turning ordinary moments into meaningful ones. 🌷✨
 
@@ -158,8 +172,9 @@ Let’s make life more creative, vibrant, and authentically ours.
 
 Thanks for stopping by. 🌼 Feel free to look around, reach out, or just enjoy the vibe.
       </p>
-Click my photo to see the magic. 
-</p>
+
+      <p>Click my photo to see the magic.</p>
+
       <nav>
         <a href="about.html">About Me</a>
         <a href="blog.html">My Gallery</a>
@@ -179,4 +194,3 @@ Click my photo to see the magic.
   </script>
 </body>
 </html>
-
