@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Me</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Victor+Mono&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       font-family: 'Century Gothic', sans-serif;
       background: url('black.jpg') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
       color: white;
+      overflow-x: hidden;
     }
 
     .overlay {
@@ -27,16 +31,19 @@
     .contact-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 2s ease;
     }
 
     h1 {
       text-align: center;
-      font-size: 36px;
-      font-family: 'Victor Mono', cursive;
-      margin-bottom: 40px;
-      color: white;
-      text-shadow: 1px 1px 6px #000;
+      font-size: 48px;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 50px;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
     }
 
     .card {
@@ -45,15 +52,22 @@
       padding: 25px;
       border-radius: 20px;
       margin-bottom: 30px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       gap: 20px;
-      transition: transform 0.3s ease;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: floatIn 1s forwards;
     }
 
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.4s; }
+    .card:nth-child(4) { animation-delay: 0.6s; }
+
     .card:hover {
-      transform: scale(1.03);
+      box-shadow: 0 0 25px #ffffffaa;
+      transform: scale(1.02);
     }
 
     .card img {
@@ -62,33 +76,38 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid black;
-    }
-
-    .card a {
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-    }
-
-    .card a:hover {
-      text-decoration: underline;
+      transition: 0.3s;
     }
 
     .info {
       display: flex;
       flex-direction: column;
+      font-family: 'Great Vibes', cursive;
+      font-size: 20px;
     }
 
     .info strong {
-      font-size: 16px;
-      margin-bottom: 5px;
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #444;
+      transition: color 0.3s;
+    }
+
+    .card a:hover {
+      color: #000;
+      text-decoration: underline;
     }
 
     .back-button {
       display: block;
       width: fit-content;
-      margin: 40px auto 0;
-      padding: 12px 25px;
+      margin: 50px auto 0;
+      padding: 12px 28px;
       font-size: 16px;
       background-color: white;
       color: black;
@@ -96,13 +115,36 @@
       text-decoration: none;
       font-weight: bold;
       border: 2px solid black;
-      box-shadow: 0 0 10px #00000077;
-      transition: 0.3s;
+      box-shadow: 0 0 15px #00000088;
+      transition: 0.3s ease;
     }
 
     .back-button:hover {
       background-color: black;
       color: white;
+    }
+
+    /* Animations */
+    @keyframes floatIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .card img {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
@@ -110,7 +152,7 @@
   <div class="overlay"></div>
 
   <div class="contact-container">
-    <h1>Contact Info's</h1>
+    <h1>Contact Informations</h1>
 
     <div class="card">
       <img src="portrait2.jpg" alt="Portrait Icon" />
